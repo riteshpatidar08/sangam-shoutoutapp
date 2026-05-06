@@ -14,16 +14,11 @@ function App() {
   const colors = ['#fbbf24', '#f472b6', '#60a5fa', '#34d399', '#a78bfa'];
 
   useEffect(() => {
-    fetchShoutouts();
+   
   }, []);
 
   const fetchShoutouts = async () => {
-    try {
-      const response = await axios.get(API_URL);
-      setShoutouts(response.data);
-    } catch (error) {
-      console.error("Error fetching shoutouts:", error);
-    }
+ 
   };
 
   const handleSubmit = async (e) => {
@@ -63,12 +58,12 @@ function App() {
       </header>
 
       <section className="shoutout-form">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={}>
           <textarea
             placeholder="What's on your mind?"
             rows="3"
             value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            onChange={}
           />
           <div className="form-footer">
             <div className="color-picker">
