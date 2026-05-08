@@ -186,7 +186,7 @@ button.post-btn:active {
   background: var(--accent-pink);
 }
 
-/* Custom scrollbar to match vibe */
+
 ::-webkit-scrollbar {
   width: 12px;
 }

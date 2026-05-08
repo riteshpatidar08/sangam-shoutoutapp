@@ -30,15 +30,15 @@ const Shoutout = mongoose.model('Shoutout', shoutoutSchema);
 
 app.get('/api/shoutouts', async (req, res) => {
   try {
-    const shoutouts = await Shoutout.find().sort({ timestamp: -1 });
-    res.json(shoutouts);
+  //fetch the data
+  //send the response 
   } catch (err) {
     res.status(500).json({ error: "Server error" });
   }
 });
 
 app.post('/api/shoutouts', async (req, res) => {
-  const { message, color } = req.body;
+  //fix the logic
   if (!message) return res.status(400).json({ error: "Message is required" });
 
   try {
@@ -67,6 +67,10 @@ app.post('/api/shoutouts/:id/like', async (req, res) => {
     res.status(500).json({ error: "Failed to like shoutout" });
   }
 });
+
+app.get('/' , (req,res)=>{
+  res.send("Server is up")
+})
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
